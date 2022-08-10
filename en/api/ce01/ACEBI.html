@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>读取EBI数据：记账凭证列表 | M18 Developer Center</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Make Something People Want">
+    
+    <link rel="preload" href="/assets/css/0.styles.3f8f40ca.css" as="style"><link rel="preload" href="/assets/js/app.130297ef.js" as="script"><link rel="preload" href="/assets/js/3.b5045ed4.js" as="script"><link rel="preload" href="/assets/js/7.d668c20b.js" as="script"><link rel="prefetch" href="/assets/js/10.f558117d.js"><link rel="prefetch" href="/assets/js/11.7de46854.js"><link rel="prefetch" href="/assets/js/12.58c7a741.js"><link rel="prefetch" href="/assets/js/13.fc8ab3af.js"><link rel="prefetch" href="/assets/js/14.45da25fd.js"><link rel="prefetch" href="/assets/js/15.c6e60d66.js"><link rel="prefetch" href="/assets/js/16.8a1d4da9.js"><link rel="prefetch" href="/assets/js/17.330e3f64.js"><link rel="prefetch" href="/assets/js/18.0a6aa0dc.js"><link rel="prefetch" href="/assets/js/19.cfdba96e.js"><link rel="prefetch" href="/assets/js/2.a6a5f458.js"><link rel="prefetch" href="/assets/js/20.7aaba5ba.js"><link rel="prefetch" href="/assets/js/21.b9d1b3f1.js"><link rel="prefetch" href="/assets/js/22.04434884.js"><link rel="prefetch" href="/assets/js/23.74b0fd6c.js"><link rel="prefetch" href="/assets/js/24.53f2bced.js"><link rel="prefetch" href="/assets/js/25.aee53d66.js"><link rel="prefetch" href="/assets/js/26.9552892f.js"><link rel="prefetch" href="/assets/js/27.ffdbc9b3.js"><link rel="prefetch" href="/assets/js/28.3ac58c1f.js"><link rel="prefetch" href="/assets/js/29.fc9164ff.js"><link rel="prefetch" href="/assets/js/30.45dcf534.js"><link rel="prefetch" href="/assets/js/31.12d9f09f.js"><link rel="prefetch" href="/assets/js/32.9ecb19fc.js"><link rel="prefetch" href="/assets/js/33.1780d7d0.js"><link rel="prefetch" href="/assets/js/34.8f96b97c.js"><link rel="prefetch" href="/assets/js/35.1ebecee8.js"><link rel="prefetch" href="/assets/js/36.f637cfbe.js"><link rel="prefetch" href="/assets/js/37.22b6ad85.js"><link rel="prefetch" href="/assets/js/38.98750d80.js"><link rel="prefetch" href="/assets/js/39.e5c1e0ea.js"><link rel="prefetch" href="/assets/js/4.13510c45.js"><link rel="prefetch" href="/assets/js/40.bf4c14a2.js"><link rel="prefetch" href="/assets/js/41.de3239b6.js"><link rel="prefetch" href="/assets/js/42.78364237.js"><link rel="prefetch" href="/assets/js/43.56185039.js"><link rel="prefetch" href="/assets/js/44.12e53e61.js"><link rel="prefetch" href="/assets/js/45.94b7a106.js"><link rel="prefetch" href="/assets/js/46.cb1ee838.js"><link rel="prefetch" href="/assets/js/47.086f1112.js"><link rel="prefetch" href="/assets/js/48.5f655a33.js"><link rel="prefetch" href="/assets/js/49.26c3c9f7.js"><link rel="prefetch" href="/assets/js/5.010cec6b.js"><link rel="prefetch" href="/assets/js/50.bfc46b40.js"><link rel="prefetch" href="/assets/js/51.aef96db8.js"><link rel="prefetch" href="/assets/js/52.e1d051b3.js"><link rel="prefetch" href="/assets/js/53.d9b55ec5.js"><link rel="prefetch" href="/assets/js/54.a0d57f20.js"><link rel="prefetch" href="/assets/js/55.ef5f7b50.js"><link rel="prefetch" href="/assets/js/56.1bc3b62e.js"><link rel="prefetch" href="/assets/js/57.5767b86c.js"><link rel="prefetch" href="/assets/js/58.21897078.js"><link rel="prefetch" href="/assets/js/59.45382501.js"><link rel="prefetch" href="/assets/js/6.cc361f76.js"><link rel="prefetch" href="/assets/js/60.469d03f0.js"><link rel="prefetch" href="/assets/js/61.dac8563f.js"><link rel="prefetch" href="/assets/js/62.8bbe827d.js"><link rel="prefetch" href="/assets/js/63.7d07e914.js"><link rel="prefetch" href="/assets/js/64.6e74669a.js"><link rel="prefetch" href="/assets/js/65.ba81596f.js"><link rel="prefetch" href="/assets/js/66.e66b8f9e.js"><link rel="prefetch" href="/assets/js/67.5ae46f6b.js"><link rel="prefetch" href="/assets/js/68.7c531c69.js"><link rel="prefetch" href="/assets/js/69.784e8a2e.js"><link rel="prefetch" href="/assets/js/70.7f57a0c5.js"><link rel="prefetch" href="/assets/js/71.daf69628.js"><link rel="prefetch" href="/assets/js/72.af77869e.js"><link rel="prefetch" href="/assets/js/73.c9da131a.js"><link rel="prefetch" href="/assets/js/74.1d47559b.js"><link rel="prefetch" href="/assets/js/75.c2958162.js"><link rel="prefetch" href="/assets/js/76.a049f25f.js"><link rel="prefetch" href="/assets/js/77.05662f64.js"><link rel="prefetch" href="/assets/js/78.6408d474.js"><link rel="prefetch" href="/assets/js/79.c1d09ef6.js"><link rel="prefetch" href="/assets/js/8.09b9aca9.js"><link rel="prefetch" href="/assets/js/80.a8ddd53e.js"><link rel="prefetch" href="/assets/js/81.83315bbb.js"><link rel="prefetch" href="/assets/js/82.c0afca90.js"><link rel="prefetch" href="/assets/js/83.5f0237ec.js"><link rel="prefetch" href="/assets/js/84.014f4db5.js"><link rel="prefetch" href="/assets/js/85.0bf45b46.js"><link rel="prefetch" href="/assets/js/9.887d706f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3f8f40ca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">M18 Developer Center</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/en/tutorial/" class="nav-link">
+  Tutorial
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="WebServices" class="dropdown-title"><span class="title">WebServices</span> <span class="arrow down"></span></button> <button type="button" aria-label="WebServices" class="mobile-dropdown-title"><span class="title">WebServices</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/en/api/m18/" class="nav-link">
+  M18
+</a></li><li class="dropdown-item"><!----> <a href="/en/api/ce01/" class="nav-link router-link-active">
+  M18 ERP
+</a></li><li class="dropdown-item"><!----> <a href="/en/api/ch01/" class="nav-link">
+  M18 HCM
+</a></li></ul></div></div><div class="nav-item"><a href="/en/m18/" class="nav-link">
+  App
+</a></div><div class="nav-item"><a href="/zh-CN/" class="nav-link">
+  中文文档
+</a></div><div class="nav-item"><a href="https://community.multiable.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Community
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/en/tutorial/" class="nav-link">
+  Tutorial
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="WebServices" class="dropdown-title"><span class="title">WebServices</span> <span class="arrow down"></span></button> <button type="button" aria-label="WebServices" class="mobile-dropdown-title"><span class="title">WebServices</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/en/api/m18/" class="nav-link">
+  M18
+</a></li><li class="dropdown-item"><!----> <a href="/en/api/ce01/" class="nav-link router-link-active">
+  M18 ERP
+</a></li><li class="dropdown-item"><!----> <a href="/en/api/ch01/" class="nav-link">
+  M18 HCM
+</a></li></ul></div></div><div class="nav-item"><a href="/en/m18/" class="nav-link">
+  App
+</a></div><div class="nav-item"><a href="/zh-CN/" class="nav-link">
+  中文文档
+</a></div><div class="nav-item"><a href="https://community.multiable.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Community
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>M18 ERP WebServices</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/en/api/ce01/" aria-current="page" class="sidebar-link">访问权限</a></li><li><a href="/en/api/ce01/EBI.html" class="sidebar-link">EBI</a></li><li><a href="/en/api/ce01/FM.html" class="sidebar-link">基础资料</a></li><li><a href="/en/api/ce01/Sales.html" class="sidebar-link">销售模块</a></li><li><a href="/en/api/ce01/Purchase.html" class="sidebar-link">采购模块</a></li><li><a href="/en/api/ce01/Stock.html" class="sidebar-link">库存模块</a></li><li><a href="/en/api/ce01/Consignment.html" class="sidebar-link">委外代销模块</a></li><li><a href="/en/api/ce01/Subcontract.html" class="sidebar-link">委外加工模块</a></li><li><a href="/en/api/ce01/Production.html" class="sidebar-link">生产模块</a></li><li><a href="/en/api/ce01/Poscore.html" class="sidebar-link">零售货品模块</a></li><li><a href="/en/api/ce01/Possv.html" class="sidebar-link">零售储值模块</a></li><li><a href="/en/api/ce01/AC.html" class="sidebar-link">财务模块</a></li><li><a href="/en/api/ce01/ACEBI.html" aria-current="page" class="active sidebar-link">财务EBI</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-记账凭证列表" class="sidebar-link">读取EBI数据：记账凭证列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-明细分类账列表" class="sidebar-link">读取EBI数据：明细分类账列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收创始记录列表" class="sidebar-link">读取EBI数据：应收创始记录列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-预收创始记录列表" class="sidebar-link">读取EBI数据：预收创始记录列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款交易列表" class="sidebar-link">读取EBI数据：应收账款交易列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款交易报告" class="sidebar-link">读取EBI数据：应收账款交易报告</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款账龄分析表-按应收对象和天数" class="sidebar-link">读取EBI数据：应收账款账龄分析表（按应收对象和天数）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款账龄分析表-按应收对象和月份" class="sidebar-link">读取EBI数据：应收账款账龄分析表（按应收对象和月份）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款账龄分析表-按发票和天数" class="sidebar-link">读取EBI数据：应收账款账龄分析表（按发票和天数）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款账龄分析表-按发票和月份" class="sidebar-link">读取EBI数据：应收账款账龄分析表（按发票和月份）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-客户订单订金往来报告" class="sidebar-link">读取EBI数据：客户订单订金往来报告</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应收账款及订金往来报告" class="sidebar-link">读取EBI数据：应收账款及订金往来报告</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付创始记录列表" class="sidebar-link">读取EBI数据：应付创始记录列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-预付创始记录列表" class="sidebar-link">读取EBI数据：预付创始记录列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款交易列表" class="sidebar-link">读取EBI数据：应付账款交易列表</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款交易报告" class="sidebar-link">读取EBI数据：应付账款交易报告</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款账龄分析表-按应付对象和天数" class="sidebar-link">读取EBI数据：应付账款账龄分析表（按应付对象和天数）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款账龄分析表-按应付对象和月份" class="sidebar-link">读取EBI数据：应付账款账龄分析表（按应付对象和月份）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款账龄分析表-按发票和天数" class="sidebar-link">读取EBI数据：应付账款账龄分析表（按发票和天数）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款账龄分析表-按发票和月份" class="sidebar-link">读取EBI数据：应付账款账龄分析表（按发票和月份）</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-供应商订单订金往来报告" class="sidebar-link">读取EBI数据：供应商订单订金往来报告</a></li><li class="sidebar-sub-header"><a href="/en/api/ce01/ACEBI.html#读取ebi数据-应付账款及订金往来报告" class="sidebar-link">读取EBI数据：应付账款及订金往来报告</a></li></ul></li><li><a href="/en/api/ce01/m18erpws.html" class="sidebar-link">Trading and Finance</a></li><li><a href="/en/api/ce01/m18retailws.html" class="sidebar-link">Warehouse Management Solution</a></li><li><a href="/en/api/ce01/m18erpwmsws.html" class="sidebar-link">Retail and Third-Party Logistics</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="读取ebi数据-记账凭证列表"><a href="#读取ebi数据-记账凭证列表" class="header-anchor">#</a> 读取EBI数据：记账凭证列表</h2> <h4 id="一、接口描述"><a href="#一、接口描述" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[记账凭证列表]，返回EBI数据</p> <h4 id="二、接口调用说明"><a href="#二、接口调用说明" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;T_A_particular&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_refNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Feb 01&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;50&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9104&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_accDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;採購:119884PRO&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_chequeNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repCredit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;T_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;15,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;119884PI-1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repDebit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;15,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;43673&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_1.2c6bc9c8.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-明细分类账列表"><a href="#读取ebi数据-明细分类账列表" class="header-anchor">#</a> 读取EBI数据：明细分类账列表</h2> <h4 id="一、接口描述-2"><a href="#一、接口描述-2" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[明细分类账列表]，返回EBI数据</p> <h4 id="二、接口调用说明-2"><a href="#二、接口调用说明-2" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1283&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_jlno&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PI20110009&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_amtCredit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_refNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_jlId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;38862&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;110001&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_chequeNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_balDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_particular&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;80&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_amtDebit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_bankSlipNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_balance&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repCredit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AC&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repDebit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,000.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_2.3c714bf4.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收创始记录列表"><a href="#读取ebi数据-应收创始记录列表" class="header-anchor">#</a> 读取EBI数据：应收创始记录列表</h2> <h4 id="一、接口描述-3"><a href="#一、接口描述-3" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收创始记录列表]，返回EBI数据</p> <h4 id="二、接口调用说明-3"><a href="#二、接口调用说明-3" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;233827ARIB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;T&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Mar 08&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportIniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4,470.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAlAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4,470.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_iniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_alAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;99&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.89400000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Mar 08&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_3.dd7d5ea4.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-预收创始记录列表"><a href="#读取ebi数据-预收创始记录列表" class="header-anchor">#</a> 读取EBI数据：预收创始记录列表</h2> <h4 id="一、接口描述-4"><a href="#一、接口描述-4" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[预收创始记录列表]，返回EBI数据</p> <h4 id="二、接口调用说明-4"><a href="#二、接口调用说明-4" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315DRIB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;17,600.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;USD&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Nov 30&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportIniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;160,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAlAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;19,200.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;140,800.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_iniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;20,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315CUS (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_alAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,400.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;17&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;8.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_4.c89063e2.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款交易列表"><a href="#读取ebi数据-应收账款交易列表" class="header-anchor">#</a> 读取EBI数据：应收账款交易列表</h2> <h4 id="一、接口描述-5"><a href="#一、接口描述-5" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款交易列表]，返回EBI数据</p> <h4 id="二、接口调用说明-5"><a href="#二、接口调用说明-5" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAINARTRAN_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;394&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_ttlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_ttlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Oct 04&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportDepoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JCAAART211001&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_5.4addf8c1.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款交易报告"><a href="#读取ebi数据-应收账款交易报告" class="header-anchor">#</a> 读取EBI数据：应收账款交易报告</h2> <h4 id="一、接口描述-6"><a href="#一、接口描述-6" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款交易报告]，返回EBI数据</p> <h4 id="二、接口调用说明-6"><a href="#二、接口调用说明-6" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAINARTRAN_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;394&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ARTRANT_A_c_d&quot;</span><span class="token operator">:</span> <span class="token string">&quot;加&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ARTRANT_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ARTRANT_A_accDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Account Receivable 1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ARTRANT_A_particular&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportFooterAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;207866CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Oct 04&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportDepoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINARTRAN_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JCAAART211001&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCCODE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5707&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCCODE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;58&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_6.68503cf7.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款账龄分析表-按应收对象和天数"><a href="#读取ebi数据-应收账款账龄分析表-按应收对象和天数" class="header-anchor">#</a> 读取EBI数据：应收账款账龄分析表（按应收对象和天数）</h2> <h4 id="一、接口描述-7"><a href="#一、接口描述-7" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款账龄分析表（按应收对象和天数）]，返回EBI数据</p> <h4 id="二、接口调用说明-7"><a href="#二、接口调用说明-7" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_iPostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_iPostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;118&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_forRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;21,597.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Test Customer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;278&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;COSTTEST&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cus&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_7.7ade5769.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款账龄分析表-按应收对象和月份"><a href="#读取ebi数据-应收账款账龄分析表-按应收对象和月份" class="header-anchor">#</a> 读取EBI数据：应收账款账龄分析表（按应收对象和月份）</h2> <h4 id="一、接口描述-8"><a href="#一、接口描述-8" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款账龄分析表（按应收对象和月份）]，返回EBI数据</p> <h4 id="二、接口调用说明-8"><a href="#二、接口调用说明-8" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Jan 07&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Test Customer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01ModuleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;销售发票&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;SI21010063&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;完全核销&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;118&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Jan 07&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;COSTTEST&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_bal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_8.fdfa1f55.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款账龄分析表-按发票和天数"><a href="#读取ebi数据-应收账款账龄分析表-按发票和天数" class="header-anchor">#</a> 读取EBI数据：应收账款账龄分析表（按发票和天数）</h2> <h4 id="一、接口描述-9"><a href="#一、接口描述-9" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款账龄分析表（按发票和天数）]，返回EBI数据</p> <h4 id="二、接口调用说明-9"><a href="#二、接口调用说明-9" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_iPostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_iPostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;118&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_forRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;21,597.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Test Customer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;COSTTEST&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_9.3e15bded.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款账龄分析表-按发票和月份"><a href="#读取ebi数据-应收账款账龄分析表-按发票和月份" class="header-anchor">#</a> 读取EBI数据：应收账款账龄分析表（按发票和月份）</h2> <h4 id="一、接口描述-10"><a href="#一、接口描述-10" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款账龄分析表（按发票和月份）]，返回EBI数据</p> <h4 id="二、接口调用说明-10"><a href="#二、接口调用说明-10" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_outAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportInvAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Jan 07&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Test Customer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;销售发票&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RMB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;SI21010063&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;完全核销&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportBal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;118&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Jan 07&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;COSTTEST&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_bal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_10.719f5eed.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-客户订单订金往来报告"><a href="#读取ebi数据-客户订单订金往来报告" class="header-anchor">#</a> 读取EBI数据：客户订单订金往来报告</h2> <h4 id="一、接口描述-11"><a href="#一、接口描述-11" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[客户订单订金往来报告]，返回EBI数据</p> <h4 id="二、接口调用说明-11"><a href="#二、接口调用说明-11" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_balDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Aug 05&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;210302CUS&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;86&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;88&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repBal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;529.30&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;529.30&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cus&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;recReg&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;210302RR-C1&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_11.23816699.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应收账款及订金往来报告"><a href="#读取ebi数据-应收账款及订金往来报告" class="header-anchor">#</a> 读取EBI数据：应收账款及订金往来报告</h2> <h4 id="一、接口描述-12"><a href="#一、接口描述-12" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应收账款及订金往来报告]，返回EBI数据</p> <h4 id="二、接口调用说明-12"><a href="#二、接口调用说明-12" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_ARCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ARNetAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,850.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_balDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Jan 25&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ARDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,850.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;144&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_accDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;P20210827&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;232036POSDN-2&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01ModuleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;零售送货单&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2,850.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepNetAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;poscoreMember&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;poscoreDeliveryNote&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_12.f51a3140.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付创始记录列表"><a href="#读取ebi数据-应付创始记录列表" class="header-anchor">#</a> 读取EBI数据：应付创始记录列表</h2> <h4 id="一、接口描述-13"><a href="#一、接口描述-13" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付创始记录列表]，返回EBI数据</p> <h4 id="二、接口调用说明-13"><a href="#二、接口调用说明-13" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315APIB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;USD&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 01&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportIniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;39,150.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAlAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;39,150.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_iniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315VEN (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_alAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;105&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;28&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;7.83000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Jan 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_13.78629fc1.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-预付创始记录列表"><a href="#读取ebi数据-预付创始记录列表" class="header-anchor">#</a> 读取EBI数据：预付创始记录列表</h2> <h4 id="一、接口描述-14"><a href="#一、接口描述-14" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[预付创始记录列表]，返回EBI数据</p> <h4 id="二、接口调用说明-14"><a href="#二、接口调用说明-14" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315DPIB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;654.72&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;USD&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 04&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportIniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;36,018.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAlAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;30,891.54&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5,126.46&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_iniAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4,600.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315VEN (SC)&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_alAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3,945.28&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;217315VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;105&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;7.83000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_14.5e3632cd.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款交易列表"><a href="#读取ebi数据-应付账款交易列表" class="header-anchor">#</a> 读取EBI数据：应付账款交易列表</h2> <h4 id="一、接口描述-15"><a href="#一、接口描述-15" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款交易列表]，返回EBI数据</p> <h4 id="二、接口调用说明-15"><a href="#二、接口调用说明-15" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAINAPTRAN_A_ttlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AP_211230&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;109&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;260.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.30000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CNY&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_ttlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;200.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;260.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021125VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1627&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportDepoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;200.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Dec 30&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_15.6b226dcb.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款交易报告"><a href="#读取ebi数据-应付账款交易报告" class="header-anchor">#</a> 读取EBI数据：应付账款交易报告</h2> <h4 id="一、接口描述-16"><a href="#一、接口描述-16" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款交易报告]，返回EBI数据</p> <h4 id="二、接口调用说明-16"><a href="#二、接口调用说明-16" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;APTRANT_A_particular&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AP_211230&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;109&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;260.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlDisc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportFooterAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;260.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;APTRANT_A_accDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Fee&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.30000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_curId_desc__lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CNY&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportTtlCharge&quot;</span><span class="token operator">:</span> <span class="token string">&quot;260.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021125VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1627&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_beId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportDepoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;APTRANT_A_c_d&quot;</span><span class="token operator">:</span> <span class="token string">&quot;加&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;APTRANT_A_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;200.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_beId_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JC-AA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCCODE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1004&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAINAPTRAN_A_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Dec 30&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ACCCODE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;22&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_16.b7dfa976.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款账龄分析表-按应付对象和天数"><a href="#读取ebi数据-应付账款账龄分析表-按应付对象和天数" class="header-anchor">#</a> 读取EBI数据：应付账款账龄分析表（按应付对象和天数）</h2> <h4 id="一、接口描述-17"><a href="#一、接口描述-17" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款账龄分析表（按应付对象和天数）]，返回EBI数据</p> <h4 id="二、接口调用说明-17"><a href="#二、接口调用说明-17" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_iPostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_iPostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;80&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_forRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;96&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AC&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_17.7fa78445.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款账龄分析表-按应付对象和月份"><a href="#读取ebi数据-应付账款账龄分析表-按应付对象和月份" class="header-anchor">#</a> 读取EBI数据：应付账款账龄分析表（按应付对象和月份）</h2> <h4 id="一、接口描述-18"><a href="#一、接口描述-18" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款账龄分析表（按应付对象和月份）]，返回EBI数据</p> <h4 id="二、接口调用说明-18"><a href="#二、接口调用说明-18" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_iPostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_iPostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_depoAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;80&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRepPer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_forRate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;96&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BE_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AC&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ePostClRep&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_18.de78bf8b.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款账龄分析表-按发票和天数"><a href="#读取ebi数据-应付账款账龄分析表-按发票和天数" class="header-anchor">#</a> 读取EBI数据：应付账款账龄分析表（按发票和天数）</h2> <h4 id="一、接口描述-19"><a href="#一、接口描述-19" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款账龄分析表（按发票和天数）]，返回EBI数据</p> <h4 id="二、接口调用说明-19"><a href="#二、接口调用说明-19" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_tranType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;pi&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportInvAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;74&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01ModuleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;采购发票&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PI20110009&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;未核销&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportBal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;80&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;96&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AC&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_bal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_19.1b3ddc0d.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款账龄分析表-按发票和月份"><a href="#读取ebi数据-应付账款账龄分析表-按发票和月份" class="header-anchor">#</a> 读取EBI数据：应付账款账龄分析表（按发票和月份）</h2> <h4 id="一、接口描述-20"><a href="#一、接口描述-20" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款账龄分析表（按发票和月份）]，返回EBI数据</p> <h4 id="二、接口调用说明-20"><a href="#二、接口调用说明-20" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;MAIN_tranType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;pi&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;74&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt4&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.00000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;RCUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;采购发票&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PI20110009&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_settleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;未核销&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_invAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_outAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10,000.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt3&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt2&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_reportOutAmt1&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;80&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PB&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;96&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_cpDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020 Dec 31&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;BEDEPT_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AC&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_bal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_20.530c819b.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-供应商订单订金往来报告"><a href="#读取ebi数据-供应商订单订金往来报告" class="header-anchor">#</a> 读取EBI数据：供应商订单订金往来报告</h2> <h4 id="一、接口描述-21"><a href="#一、接口描述-21" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[供应商订单订金往来报告]，返回EBI数据</p> <h4 id="二、接口调用说明-21"><a href="#二、接口调用说明-21" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HK$&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderTypeMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_balDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Dec 29&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;242.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021125VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1627&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;145&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_orderType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repBal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;242.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_repCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;payReg&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PET21120064&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_21.8d05ce9a.jpg" alt="ebi1"></p> <h2 id="读取ebi数据-应付账款及订金往来报告"><a href="#读取ebi数据-应付账款及订金往来报告" class="header-anchor">#</a> 读取EBI数据：应付账款及订金往来报告</h2> <h4 id="一、接口描述-22"><a href="#一、接口描述-22" class="header-anchor">#</a> 一、接口描述</h4> <p>​		 用于执行EBI[应付账款及订金往来报告]，返回EBI数据</p> <h4 id="二、接口调用说明-22"><a href="#二、接口调用说明-22" class="header-anchor">#</a> 二、接口调用说明</h4> <p>​		1、请求说明</p> <table><thead><tr><th>URL</th> <th>http://[server]/jsf/rfws/ebiWidget/loadReport</th></tr></thead> <tbody><tr><td>http请求方式</td> <td>GET</td></tr> <tr><td>编码类型</td> <td>UTF-8</td></tr></tbody></table> <p>​		2、URL参数</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>authorization</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#获取访问权限">OAuth获取的Access Token</a></td></tr> <tr><td>client_id</td> <td>String(Header)</td> <td>是</td> <td><a href="/en/api/ce01/#创建访问账号">M18[授权应用列表]中的Client ID</a></td></tr> <tr><td>formatId</td> <td>long(Query)</td> <td>是</td> <td><a href="/ce01/ebi/">通过EBI接口获取到formatId</a></td></tr> <tr><td>beId</td> <td>long(Query)</td> <td>否</td> <td>企业法人的ID。若不传，则查询所有有权限的BE数据</td></tr> <tr><td>offset</td> <td>int(Query)</td> <td>否</td> <td>返回结果的开始行</td></tr> <tr><td>rows</td> <td>int(Query)</td> <td>否</td> <td>返回结果的结束行</td></tr></tbody></table> <p>​		3、请求示例</p> <div class="language- extra-class"><pre class="language-text"><code>	CloseableHttpClient client = HttpClientBuilder.create().build();
+	CloseableHttpResponse res = null;
+	try {
+
+		String url = &quot;http://&quot; + HostIP + &quot;:&quot; + HostPort + &quot;/jsf/rfws/ebiWidget/loadReport&quot;;
+		String param = &quot;&amp;formatId=&quot; + formatId;
+
+		HttpGet get = new HttpGet(url + &quot;?&quot; + param);
+		get.addHeader(&quot;authorization&quot;, access_token);
+		get.addHeader(&quot;client_id&quot;, ClientID);
+		res = client.execute(get);
+		if (res.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+			JSONObject json = JSON.parseObject(EntityUtils.toString(res.getEntity()));
+
+			System.out.println(json);
+		}
+
+		get.releaseConnection();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (res != null) {
+				res.close();
+			}
+			if (client != null) {
+				client.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}				
+</code></pre></div><p>​		4、返回示例</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;size&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rows&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;CUR_A_sym&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CNY&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_APDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;M18ReservedCol_dataIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;AI1_A_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepDrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021 Dec 29&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_rate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.21000000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AICode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021125VEN&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1627&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;145&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_accDesc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_tranNo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PET21120064&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01ModuleMess&quot;</span><span class="token operator">:</span> <span class="token string">&quot;付款单&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;242.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_amt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;200.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_DepNetAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;242.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_APCrAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_AIType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ven&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_ce01Module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;payReg&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;MAIN_APNetAmt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.00&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/ac_ebi_22.ff7544b0.jpg" alt="ebi1"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/en/api/ce01/AC.html" class="prev">
+        财务模块
+      </a></span> <span class="next"><a href="/en/api/ce01/m18erpws.html">
+        Trading and Finance
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.130297ef.js" defer></script><script src="/assets/js/3.b5045ed4.js" defer></script><script src="/assets/js/7.d668c20b.js" defer></script>
+  </body>
+</html>
